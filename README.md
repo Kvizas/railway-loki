@@ -8,7 +8,7 @@ Loki is a horizontally scalable, multi-tenant log aggregation system created by 
 
 **If you've read the above disclaimer and understand it, click to deploy:**
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/WRXzro?referralCode=A6ij-A)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/0zMnS-?referralCode=A6ij-A)
 
 ## Configuration
 This [Loki configuration](loki-config.yaml) sets up a single-node instance with filesystem-based storage, storing logs in `/tmp/loki`. Authentication is disabled, and the server listens on port `3100` (HTTP) and `9096` (gRPC). It uses an in-memory key-value store for the ring, meaning it does not persist across restarts. Logs are stored using the v13 schema with a TSDB-backed index, rotated every 24 hours. A 100MB embedded cache is enabled for query results to improve performance. Structured metadata is allowed, and pattern-based ingestion is turned on. The ruler is configured to send alerts to Alertmanager (port 9093), and frontend encoding is set to protobuf. Anonymous usage analytics are enabled by default but can be disabled.
